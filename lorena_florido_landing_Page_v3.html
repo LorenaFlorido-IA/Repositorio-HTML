@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Perfil profesional de Lorena Florido, Gerenta de Comercio Exterior en FIESA SRL.">
+  <title>Lorena Florido | Comercio Exterior, procesos e innovación</title>
+  <style>
+    :root {
+      --ink: #202824;
+      --muted: #68736c;
+      --paper: #f6f5f0;
+      --surface: #ffffff;
+      --green: #294b3d;
+      --green-2: #3f6654;
+      --sage: #dce5dc;
+      --copper: #b87955;
+      --line: #e4e6df;
+      --shadow: 0 18px 55px rgba(32,40,36,.08);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 44px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px);
+      background: rgba(246,245,240,.88); border-bottom: 1px solid rgba(228,230,223,.8);
+    }
+    .nav { min-height: 76px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font-weight: 750; letter-spacing: -.04em; font-size: 1.08rem; text-decoration:none; }
+    .brand span { color: var(--copper); }
+    .navlinks { display:flex; gap:26px; align-items:center; }
+    .navlinks a { text-decoration:none; color:var(--muted); font-size:.88rem; font-weight:600; }
+    .navlinks a:hover { color:var(--green); }
+    .menu-toggle { display:none; border:1px solid var(--line); background:white; border-radius:12px; padding:9px 12px; color:var(--ink); }
+    .hero { padding: 88px 0 74px; overflow:hidden; }
+    .hero-grid { display:grid; grid-template-columns: 1.25fr .75fr; align-items:center; gap:70px; }
+    .eyebrow { color:var(--green-2); font-size:.76rem; letter-spacing:.16em; text-transform:uppercase; font-weight:800; }
+    h1 { font-size:clamp(3rem, 6.6vw, 5.65rem); line-height:.99; letter-spacing:-.065em; margin:20px 0 24px; max-width:780px; }
+    h1 em { color:var(--green-2); font-style:normal; }
+    .hero-copy { color:var(--muted); font-size:1.12rem; max-width:650px; }
+    .hero-actions { display:flex; gap:13px; flex-wrap:wrap; margin-top:32px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; padding:13px 19px; border-radius:999px; font-weight:700; font-size:.9rem; text-decoration:none; transition:.2s; }
+    .btn-primary { background:var(--green); color:white; }
+    .btn-primary:hover { background:var(--green-2); transform:translateY(-2px); }
+    .btn-ghost { border:1px solid #cbd3ca; color:var(--green); }
+    .btn-ghost:hover { background:white; }
+    .hero-art { min-height:390px; position:relative; display:grid; place-items:center; }
+    .orbit { width:min(350px, 80vw); aspect-ratio:1; border:1px solid #cbd8cc; border-radius:50%; position:relative; display:grid; place-items:center; }
+    .orbit:before,.orbit:after { content:""; position:absolute; border:1px solid #d9e1d8; border-radius:50%; }
+    .orbit:before { inset:28px; } .orbit:after { inset:58px; }
+    .core { width:190px; height:190px; border-radius:50%; background:var(--green); color:white; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; z-index:1; box-shadow:0 22px 50px rgba(41,75,61,.24); }
+    .core strong { font-size:3.2rem; letter-spacing:-.08em; line-height:1; }
+    .core span { font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; margin-top:9px; color:#dce8df; }
+    .orbit-tag { position:absolute; z-index:2; background:white; border:1px solid var(--line); padding:9px 13px; border-radius:999px; font-size:.78rem; font-weight:700; box-shadow:var(--shadow); }
+    .tag-a { top:12%; left:-4%; } .tag-b { right:-8%; top:34%; } .tag-c { bottom:13%; left:2%; } .tag-d { right:0; bottom:10%; }
+    section { padding:82px 0; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:30px; margin-bottom:35px; }
+    .section-kicker { color:var(--copper); text-transform:uppercase; font-size:.74rem; letter-spacing:.15em; font-weight:800; }
+    h2 { font-size:clamp(2rem,4vw,3.1rem); letter-spacing:-.055em; line-height:1.08; margin:9px 0 0; }
+    .section-intro { max-width:480px; color:var(--muted); margin:0; }
+    .about-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:55px; align-items:start; }
+    .quote-card { background:var(--green); color:white; padding:34px; border-radius:var(--radius); min-height:280px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:var(--shadow); }
+    .quote-card .quote-mark { font-family:Georgia,serif; font-size:4rem; line-height:.7; color:#c9a184; }
+    .quote-card p { font-size:1.42rem; line-height:1.35; letter-spacing:-.025em; margin:18px 0; }
+    .quote-card small { color:#d3dfd6; }
+    .about-text p { color:var(--muted); margin-top:0; }
+    .about-text p strong { color:var(--ink); }
+    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:28px; }
+    .stat { border-top:2px solid var(--sage); padding-top:13px; }
+    .stat strong { display:block; color:var(--green); font-size:1.8rem; letter-spacing:-.06em; }
+    .stat span { color:var(--muted); font-size:.78rem; }
+    .soft { background:#eeefe9; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }
+    .card { background:var(--surface); padding:25px; border:1px solid var(--line); border-radius:18px; box-shadow:0 8px 28px rgba(32,40,36,.035); }
+    .card-number { color:var(--copper); font-size:.75rem; font-weight:800; letter-spacing:.12em; }
+    .card h3 { font-size:1.13rem; margin:13px 0 8px; letter-spacing:-.025em; }
+    .card p { color:var(--muted); font-size:.91rem; margin:0; }
+    .pill-list { display:flex; flex-wrap:wrap; gap:9px; margin-top:22px; }
+    .pill { background:var(--sage); color:var(--green); border-radius:999px; padding:7px 12px; font-size:.79rem; font-weight:700; }
+    .experience { display:grid; grid-template-columns:220px 1fr; gap:38px; padding:27px 0; border-top:1px solid var(--line); }
+    .experience:first-of-type { margin-top:14px; }
+    .exp-date { color:var(--green-2); font-weight:800; font-size:.88rem; }
+    .exp-body h3 { margin:0 0 7px; font-size:1.25rem; }
+    .exp-body p { color:var(--muted); margin:0; }
+    .project-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .project { background:white; border:1px solid var(--line); border-radius:var(--radius); padding:27px; }
+    .project-top { display:flex; align-items:center; justify-content:space-between; gap:15px; }
+    .project-icon { width:42px; height:42px; display:grid; place-items:center; border-radius:13px; background:var(--sage); color:var(--green); font-size:1.2rem; }
+    .project-label { font-size:.72rem; color:var(--copper); font-weight:800; text-transform:uppercase; letter-spacing:.12em; }
+    .project h3 { margin:17px 0 8px; font-size:1.2rem; }
+    .project p { color:var(--muted); font-size:.91rem; margin:0; }
+    .project ul { color:var(--muted); font-size:.88rem; padding-left:19px; margin-bottom:0; }
+    .interests { display:grid; grid-template-columns:1fr 1fr; gap:30px; }
+    .interest-panel { padding:28px; border-radius:var(--radius); background:white; border:1px solid var(--line); }
+    .interest-panel h3 { margin:0 0 10px; }
+    .interest-panel p { color:var(--muted); margin:0; }
+    .contact { background:var(--green); color:white; padding:70px 0; }
+    .contact-grid { display:flex; align-items:center; justify-content:space-between; gap:35px; }
+    .contact h2 { max-width:620px; }
+    .contact p { color:#d4e0d7; max-width:560px; }
+    .contact-note { border:1px solid rgba(255,255,255,.28); padding:18px 20px; border-radius:15px; color:#e6eee8; max-width:300px; font-size:.88rem; }
+    footer { padding:24px 0; color:var(--muted); font-size:.8rem; }
+    footer .wrap { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+
+    .day-intro { max-width:760px; color:var(--muted); margin:0 0 30px; }
+    .day-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+    .day-card { display:grid; grid-template-columns:48px 1fr; gap:16px; background:white; border:1px solid var(--line); border-radius:18px; padding:22px; }
+    .day-icon { width:44px; height:44px; border-radius:14px; background:var(--sage); color:var(--green); display:grid; place-items:center; font-weight:800; }
+    .day-card h3 { margin:0 0 6px; font-size:1.02rem; }
+    .day-card p { margin:0; color:var(--muted); font-size:.88rem; }
+    .management-band { margin-top:34px; padding:30px; border-radius:var(--radius); background:var(--green); color:white; }
+    .management-band h3 { margin:0 0 10px; font-size:1.35rem; }
+    .management-band p { color:#d8e3da; max-width:820px; margin:0; }
+    .management-pills { display:flex; flex-wrap:wrap; gap:9px; margin-top:19px; }
+    .management-pills span { border:1px solid rgba(255,255,255,.25); color:#f0f4f0; border-radius:999px; padding:7px 11px; font-size:.78rem; }
+
+    @media (max-width:800px) {
+      .hero-grid,.about-grid { grid-template-columns:1fr; gap:35px; }
+      .hero { padding-top:60px; }
+      .hero-art { min-height:330px; }
+      .cards,.day-grid { grid-template-columns:repeat(2,1fr); }
+      .section-head { display:block; }
+      .section-intro { margin-top:15px; }
+      .contact-grid { display:block; }
+      .contact-note { margin-top:25px; }
+    }
+    @media (max-width:600px) {
+      .wrap { width:min(100% - 32px, 1120px); }
+      .nav { min-height:66px; }
+      .menu-toggle { display:block; }
+      .navlinks { display:none; position:absolute; top:65px; left:0; right:0; padding:18px 22px 22px; background:var(--paper); border-bottom:1px solid var(--line); flex-direction:column; align-items:flex-start; gap:15px; }
+      .navlinks.open { display:flex; }
+      section { padding:62px 0; }
+      .hero { padding:54px 0 45px; }
+      h1 { font-size:3.35rem; }
+      .hero-copy { font-size:1rem; }
+      .hero-art { min-height:290px; }
+      .orbit { width:260px; }
+      .core { width:145px; height:145px; }
+      .core strong { font-size:2.5rem; }
+      .orbit-tag { font-size:.68rem; padding:7px 10px; }
+      .tag-a { left:-3%; } .tag-b { right:-5%; }
+      .cards,.project-grid,.interests,.day-grid { grid-template-columns:1fr; }
+      .experience { grid-template-columns:1fr; gap:8px; }
+      .stats { gap:8px; }
+      .stat strong { font-size:1.5rem; }
+      .quote-card { min-height:240px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Navegación principal">
+      <a class="brand" href="#inicio">LORENA<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menú ☰</button>
+      <div class="navlinks" id="navLinks">
+        <a href="#sobre-mi">Sobre mí</a><a href="#habilidades">Habilidades</a><a href="#experiencia">Experiencia</a><a href="#dia-a-dia">Mi día a día</a><a href="#proyectos">Proyectos</a><a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Comercio Exterior · Gestión · Innovación</div>
+          <h1>Ordenar lo complejo.<br><em>Hacerlo avanzar.</em></h1>
+          <p class="hero-copy">Soy Lorena Florido, Gerenta de Comercio Exterior. Me motiva conectar personas, información y procesos para transformar la operación diaria en una gestión cada vez más clara, eficiente y estratégica.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#proyectos">Conocé mi trabajo <span aria-hidden="true">&nbsp;↗</span></a>
+            <a class="btn btn-ghost" href="#sobre-mi">Mi recorrido</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Composición gráfica sobre gestión y procesos">
+          <div class="orbit">
+            <span class="orbit-tag tag-a">Estrategia</span><span class="orbit-tag tag-b">Procesos</span>
+            <span class="orbit-tag tag-c">Comex</span><span class="orbit-tag tag-d">Tecnología</span>
+            <div class="core"><strong>LF</strong><span>Gestión en movimiento</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-mi">
+      <div class="wrap about-grid">
+        <div class="quote-card">
+          <div class="quote-mark">“</div>
+          <p>En Comercio Exterior, cada operación trae un desafío nuevo. Ahí está justamente lo que me apasiona.</p>
+          <small>Una mirada práctica, analítica y en constante evolución.</small>
+        </div>
+        <div class="about-text">
+          <div class="section-kicker">01 / Sobre mí</div>
+          <h2>Experiencia que se convierte en mejora continua.</h2>
+          <p>Hace 24 años formo parte de <strong>FIESA SRL</strong>, empresa dedicada a la importación y comercialización de equipos y sistemas de seguridad electrónica. Ingresé cuando éramos un equipo de siete personas y, a lo largo de este recorrido, tuve la oportunidad de conocer distintas áreas y acompañar el crecimiento de la organización.</p>
+          <p>Hoy lidero Comercio Exterior con una mirada que combina el conocimiento operativo con la mejora de procesos, el seguimiento de la información y la optimización de herramientas de gestión. Me interesa que los datos estén disponibles, sean confiables y ayuden a tomar mejores decisiones.</p>
+          <div class="stats">
+            <div class="stat"><strong>24 años</strong><span>de recorrido en FIESA</span></div>
+            <div class="stat"><strong>360°</strong><span>mirada integral del negocio</span></div>
+            <div class="stat"><strong>+ mejora</strong><span>foco en procesos y gestión</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="habilidades">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-kicker">02 / Conocimientos y habilidades</div><h2>Gestión con criterio<br>y visión de conjunto.</h2></div>
+          <p class="section-intro">Una combinación de experiencia en operaciones, administración de sistemas, análisis de información y coordinación entre áreas.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="card-number">01 — OPERACIÓN</div><h3>Comercio Exterior</h3><p>Gestión y seguimiento integral de importaciones, documentación, proveedores, forwarders, despachantes y coordinación logística.</p></article>
+          <article class="card"><div class="card-number">02 — SISTEMAS</div><h3>ERP y gestión de datos</h3><p>Administración y optimización de Global Bluepoint (GBP), reportes, controles y mejora de la disponibilidad de información.</p></article>
+          <article class="card"><div class="card-number">03 — PROCESOS</div><h3>Organización y mejora continua</h3><p>Revisión de circuitos, definición de responsabilidades, trazabilidad, seguimiento de pendientes y estandarización.</p></article>
+          <article class="card"><div class="card-number">04 — ANÁLISIS</div><h3>Control e indicadores</h3><p>Consolidación de información operativa, análisis de desvíos y desarrollo de reportes para facilitar decisiones.</p></article>
+          <article class="card"><div class="card-number">05 — LIDERAZGO</div><h3>Coordinación transversal</h3><p>Articulación con Administración, Logística, Finanzas, Compras, Depósito y equipos externos.</p></article>
+          <article class="card"><div class="card-number">06 — INNOVACIÓN</div><h3>IA y automatización</h3><p>Exploración de herramientas de inteligencia artificial y soluciones no-code para simplificar tareas y mejorar procesos.</p></article>
+        </div>
+        <div class="pill-list">
+          <span class="pill">Análisis</span><span class="pill">Organización</span><span class="pill">Seguimiento</span><span class="pill">Resolución de problemas</span><span class="pill">Criterio</span><span class="pill">Comunicación</span><span class="pill">Adaptabilidad</span><span class="pill">Mejora continua</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-kicker">03 / Experiencia y formación</div><h2>Un recorrido construido<br>desde la práctica.</h2></div>
+          <p class="section-intro">Aprendizaje continuo, conocimiento del negocio y aplicación de nuevas herramientas a desafíos concretos.</p>
+        </div>
+        <div class="experience">
+          <div class="exp-date">2002 — Actualidad</div>
+          <div class="exp-body"><h3>Gerenta de Comercio Exterior · FIESA SRL</h3><p>24 años de trayectoria en una compañía importadora de equipos y sistemas de seguridad electrónica. Experiencia en distintas áreas de la empresa y actual conducción de la gestión de Comercio Exterior, con foco en procesos, sistemas, información y coordinación operativa.</p></div>
+        </div>
+        <div class="experience">
+          <div class="exp-date">Formación universitaria</div>
+          <div class="exp-body"><h3>Contador Público · Universidad de Buenos Aires (UBA)</h3><p>Cuatro años de formación en la carrera de Contador Público. Formación académica en disciplinas contables, administrativas y de gestión.</p></div>
+        </div>
+        <div class="experience">
+          <div class="exp-date">Formación complementaria</div>
+          <div class="exp-body"><h3>Power BI · Coderhouse y UTN</h3><p>Capacitación en herramientas de análisis y visualización de datos para transformar información operativa en reportes e indicadores de gestión.</p></div>
+        </div>
+        <div class="experience">
+          <div class="exp-date">Formación complementaria</div>
+          <div class="exp-body"><h3>Excel avanzado · Smart Pro Academy</h3><p>Formación en herramientas avanzadas de Excel para el análisis, tratamiento y organización de información.</p></div>
+        </div>
+        <div class="experience">
+          <div class="exp-date">Formación en curso</div>
+          <div class="exp-body"><h3>Diplomatura de Inteligencia Artificial para no programadores · UTN</h3><p>Formación orientada a incorporar inteligencia artificial en tareas reales: automatización, optimización de procesos, análisis de información y apoyo a la toma de decisiones.</p></div>
+        </div>
+        <div class="experience">
+          <div class="exp-date">Aprendizaje aplicado</div>
+          <div class="exp-body"><h3>Herramientas digitales para la gestión</h3><p>Exploración y aplicación de ChatGPT, herramientas no-code y Power Query como parte de una agenda de transformación y mejora del área.</p></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="dia-a-dia">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-kicker">04 / Mi día a día en Comercio Exterior</div><h2>Una gestión que conecta<br>cada parte de la operación.</h2></div>
+          <p class="section-intro">La Gerencia de Comercio Exterior no se limita a coordinar embarques: integra planificación, cumplimiento, costos, personas, sistemas e información para que cada operación avance de manera ordenada y previsible.</p>
+        </div>
+        <p class="day-intro">Mi trabajo combina la supervisión del circuito completo de importación con la resolución de imprevistos, la coordinación de equipos internos y externos y el desarrollo de herramientas que permitan anticipar desvíos y tomar decisiones con información confiable.</p>
+        <div class="day-grid">
+          <article class="day-card"><div class="day-icon">01</div><div><h3>Planificación y estrategia de importaciones</h3><p>Priorización de operaciones, planificación de embarques y arribos, evaluación de necesidades del negocio y coordinación de tiempos para asegurar el abastecimiento.</p></div></article>
+          <article class="day-card"><div class="day-icon">02</div><div><h3>Órdenes de compra y proveedores internacionales</h3><p>Seguimiento de órdenes de compra, proformas, condiciones comerciales, fechas de producción y preparación. Comunicación con proveedores del exterior y seguimiento de compromisos.</p></div></article>
+          <article class="day-card"><div class="day-icon">03</div><div><h3>Documentación y cumplimiento normativo</h3><p>Control de facturas, packing lists, documentos de transporte, certificados, fichas técnicas y requisitos aplicables a los productos. Coordinación de gestiones regulatorias y certificaciones.</p></div></article>
+          <article class="day-card"><div class="day-icon">04</div><div><h3>Logística internacional y embarques</h3><p>Negociación y evaluación de cotizaciones, selección y coordinación con forwarders, reservas, seguimiento de cargas y resolución de incidencias durante el tránsito.</p></div></article>
+          <article class="day-card"><div class="day-icon">05</div><div><h3>Gestión aduanera y coordinación externa</h3><p>Articulación con despachantes, seguimiento de destinaciones y documentación aduanera, análisis de requisitos y coordinación para liberar y retirar la mercadería.</p></div></article>
+          <article class="day-card"><div class="day-icon">06</div><div><h3>Costos, facturación y control económico</h3><p>Control de gastos de importación, facturas de proveedores y operadores, seguimiento de pagos y revisión de la documentación que respalda los costos de cada operación.</p></div></article>
+          <article class="day-card"><div class="day-icon">07</div><div><h3>Arribo, recepción y coordinación interna</h3><p>Organización de avisos de arribo y coordinación con Depósito, Logística, Administración y Finanzas para preparar la recepción y asegurar la continuidad del circuito.</p></div></article>
+          <article class="day-card"><div class="day-icon">08</div><div><h3>Gestión de productos y requisitos técnicos</h3><p>Coordinación de información para nuevos productos: características técnicas, documentación de origen, seguridad eléctrica, baterías y otros requisitos necesarios para importar y comercializar.</p></div></article>
+          <article class="day-card"><div class="day-icon">09</div><div><h3>Administración y optimización de GBP</h3><p>Administración funcional del ERP, revisión de circuitos, reportes y parametrizaciones; detección de oportunidades para mejorar la calidad y disponibilidad de los datos.</p></div></article>
+          <article class="day-card"><div class="day-icon">10</div><div><h3>Indicadores y control de gestión</h3><p>Seguimiento de operaciones abiertas, análisis de tiempos, costos, orígenes, marcas y modalidades de transporte. Elaboración de reportes para Comex y Dirección.</p></div></article>
+          <article class="day-card"><div class="day-icon">11</div><div><h3>Liderazgo y coordinación del equipo</h3><p>Organización de prioridades, distribución y seguimiento de tareas, acompañamiento del equipo, definición de criterios de trabajo y articulación con las demás áreas.</p></div></article>
+          <article class="day-card"><div class="day-icon">12</div><div><h3>Riesgos, desvíos y resolución de problemas</h3><p>Anticipación y gestión de demoras, diferencias documentales, cambios logísticos y contingencias. Evaluación de alternativas y comunicación oportuna a las áreas involucradas.</p></div></article>
+        </div>
+        <div class="management-band">
+          <h3>La mirada gerencial: más allá de cada operación</h3>
+          <p>Mi responsabilidad es lograr que el área funcione de manera integrada y aporte valor al negocio. Esto implica establecer prioridades, cuidar el cumplimiento y los costos, desarrollar al equipo, coordinar con otras gerencias, evaluar riesgos y transformar los problemas recurrentes en oportunidades de mejora.</p>
+          <div class="management-pills">
+            <span>Planificación</span><span>Liderazgo</span><span>Gestión de riesgos</span><span>Presupuesto y costos</span><span>Desarrollo del equipo</span><span>Coordinación transversal</span><span>Control de gestión</span><span>Mejora continua</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="proyectos">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="section-kicker">05 / Proyectos y foco de gestión</div><h2>Del trabajo cotidiano<br>a una gestión más inteligente.</h2></div>
+          <p class="section-intro">Iniciativas que reflejan cómo busco mejorar la trazabilidad, reducir tareas manuales y convertir información dispersa en herramientas de gestión.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project"><div class="project-top"><span class="project-icon">↗</span><span class="project-label">Procesos · GBP</span></div><h3>Digitalización del circuito de devoluciones y RMA</h3><p>Proyecto para centralizar en GBP la información de las devoluciones, dar visibilidad a cada etapa y mejorar la coordinación entre Depósito, Técnica, Expedición y Administración.</p><ul><li>Estados y responsables claros.</li><li>Menos registros duplicados y consultas entre áreas.</li><li>Mayor trazabilidad de la resolución y de la nota de crédito.</li></ul></article>
+          <article class="project"><div class="project-top"><span class="project-icon">▤</span><span class="project-label">Datos · Automatización</span></div><h3>Automatización de información de Comercio Exterior</h3><p>Iniciativa para integrar reportes de GBP y documentación operativa, reducir copias manuales y facilitar el seguimiento diario de las operaciones abiertas.</p><ul><li>Consolidación de datos y controles.</li><li>Power Query y alternativas no-code.</li><li>Indicadores para Comex y Dirección.</li></ul></article>
+          <article class="project"><div class="project-top"><span class="project-icon">◎</span><span class="project-label">Control · Reportes</span></div><h3>Información para el control de gestión</h3><p>Desarrollo de una mirada más analítica sobre las importaciones para visualizar evolución, participación y variables relevantes de la operación.</p><ul><li>Análisis por marca, origen y transporte.</li><li>Seguimiento mensual y por aduana.</li><li>Información útil para decidir y anticipar.</li></ul></article>
+          <article class="project"><div class="project-top"><span class="project-icon">✳</span><span class="project-label">IA · Innovación</span></div><h3>Aplicación práctica de inteligencia artificial</h3><p>Diseño y prueba de asistentes para convertir conocimiento operativo en herramientas reutilizables, con instrucciones claras y criterios de validación.</p><ul><li>Asistente de clasificación arancelaria y análisis tributario.</li><li>Prompts para tareas específicas del área.</li><li>Exploración de agentes y automatizaciones.</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="intereses">
+      <div class="wrap">
+        <div class="section-head"><div><div class="section-kicker">06 / Intereses</div><h2>Curiosidad que impulsa<br>nuevas posibilidades.</h2></div></div>
+        <div class="interests">
+          <article class="interest-panel"><h3>Intereses profesionales</h3><p>Inteligencia artificial aplicada al trabajo, automatización no-code, análisis de datos, visualización con Power BI, optimización de ERP y diseño de procesos simples, medibles y sostenibles.</p></article>
+          <article class="interest-panel"><h3>Una mirada personal</h3><p>Me interesa aprender, explorar ideas y encontrar soluciones prácticas. Disfruto los espacios compartidos, los encuentros con amigos y los proyectos que permiten crear y transformar.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="wrap contact-grid">
+        <div><div class="section-kicker" style="color:#d7ad91">07 / Contacto</div><h2>Las buenas ideas crecen cuando se comparten.</h2><p>Este espacio queda preparado para sumar un correo profesional, LinkedIn u otro canal de contacto.</p></div>
+        <div class="contact-note"><strong>Contacto pendiente de configuración</strong><br>El correo y los enlaces personales no se publican hasta que me indiques cuáles querés mostrar.</div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap"><span>© <span id="year"></span> Lorena Florido</span><span>Comercio Exterior · Procesos · Innovación</span></div></footer>
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
